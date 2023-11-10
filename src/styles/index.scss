@@ -1,1 +1,18 @@
 @import "./reset.scss";
+
+//定义滚动条外观
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: $mean_background_color;
+}
+::-webkit-scrollbar-thumb{
+  width: 10px;
+  background-color: aqua;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

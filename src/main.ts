@@ -22,6 +22,7 @@ import router from './router'
 const app = createApp(App)
 //使用element-plus插件
 app.use(ElementPlus, { locale: zhCn })
+
 //使用全军组件
 app.use(gloablComponent)
 app.use(router)
