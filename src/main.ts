@@ -17,6 +17,8 @@ import '@/styles/index.scss'
 
 //引入路由
 import router from './router'
+//引入全局鉴权路由
+import '@/permission'
 
 //获取应用实力对象
 const app = createApp(App)

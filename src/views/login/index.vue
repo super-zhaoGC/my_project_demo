@@ -30,7 +30,7 @@ import { ElNotification } from 'element-plus'
 
 import { time } from '@/utils/time'
 const $router = useRouter()
-let loginForm = reactive({ username: 'admin', password: '111111' })
+let loginForm = reactive({ username: 'admin', password: 'atguigu123' })
 let loading = ref(false)
 let userStore = useUserStore()
 let $route = useRoute()

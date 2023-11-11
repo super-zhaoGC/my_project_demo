@@ -14,7 +14,7 @@
         <Tabbar></Tabbar>
       </div>
       <div class="layout_main">
-        <div style="height:1000px">
+        <div style="height:auto">
           <Main></Main>
         </div>
       </div>

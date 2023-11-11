@@ -45,8 +45,8 @@ const fullScreen = () => {
 let $router = useRouter()
 //路由参数对象
 let $route = useRoute()
-const logOut = () => {
-  useUserStore().logOut()
+const logOut = async () => {
+  await useUserStore().logOut()
   $router.push({ path: '/login', query: { redirect: $route.path } })
 }
 </script>
