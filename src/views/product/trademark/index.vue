@@ -32,7 +32,12 @@
           <template #="{ row, $index }">
             <div style="text-align: center;">
               <el-button type="primary" icon="Edit" style="margin: 10px ;" @click="editTrademark(row)"></el-button>
-              <el-button type="primary" icon="Delete" style="margin: 10px"></el-button>
+
+              <el-popconfirm :title="`确定删除吗${row.tmName}？`" @confirm="delTrademark(row.id)">
+                <template #reference>
+                  <el-button type="primary" icon="Delete" style="margin: 10px"></el-button>
+                </template>
+              </el-popconfirm>
             </div>
           </template>
         </el-table-column>
@@ -81,7 +86,7 @@
 //引入数据类型
 import type { TrademarkMarkResponseData, Records } from '@/api/product/trademark/type'
 import { ref, onMounted, reactive, nextTick } from 'vue'
-import { reqHasTrademark, reqAddOrUpdateTrademark } from '@/api/product/trademark'
+import { reqHasTrademark, reqAddOrUpdateTrademark, reqDeleteTrademark } from '@/api/product/trademark'
 import type { TradeMark } from "@/api/product/trademark/type"
 import { ElMessage, UploadProps } from 'element-plus'
 //页码
@@ -231,6 +236,24 @@ const rules = reactive<any>({
 onMounted(() => {
   getHasTrafemark()
 })
+
+//定义确认删除功能
+const delTrademark = async (id: number) => {
+  let result = await reqDeleteTrademark(id)
+  if (result.code == 200) {
+    ElMessage({
+      type: 'success',
+      message: '删除成功'
+    })
+    getHasTrafemark(trademarkArr.value.length > 1 ? pageNo.value : pageNo.value - 1,)
+  } else {
+    ElMessage({
+      type: 'error',
+      message: '删除失败'
+    })
+  }
+}
+
 </script>
 
 <style scoped>
