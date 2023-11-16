@@ -8,8 +8,8 @@ enum API {
 //一级分类
 export const reqC1 = () => request.get<any, CategoryResponseData>(API.C1_URL)
 //二级分类
-export const reqC2 = (cid: number) =>
+export const reqC2 = (cid: number | string) =>
   request.get<any, CategoryResponseData>(API.C2_URL + cid)
 //三级分类
-export const reqC3 = (cid: number) =>
+export const reqC3 = (cid: number | string) =>
   request.get<any, CategoryResponseData>(API.C3_URL + cid)
