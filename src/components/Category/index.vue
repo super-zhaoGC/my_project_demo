@@ -8,15 +8,13 @@
           </el-select>
         </el-form-item>
         <el-form-item label="二级分类">
-          <el-select v-model="categoryStore.c2Id">
+          <el-select v-model="categoryStore.c2Id" @change="reqC3">
             <el-option v-for="(c2, index) in categoryStore.c2Arr" :key="c2.id" :label="c2.name" :value="c2.id" />
           </el-select>
         </el-form-item>
         <el-form-item label="三级分类">
-          <el-select>
-            <el-option label="被" value="1" />
-            <el-option label="被" value="1" />
-            <el-option label="被" value="1" />
+          <el-select v-model="categoryStore.c3Id">
+            <el-option v-for="(c3, index) in categoryStore.c3Arr" :key="c3.id" :label="c3.name" :value="c3.id" />
           </el-select>
         </el-form-item>
       </el-form>
@@ -33,9 +31,20 @@ onMounted(() => {
 })
 const reqC1 = () => {
   categoryStore.getC1()
+
 }
+
 const reqC2 = () => {
   categoryStore.getC2()
+  categoryStore.getC1()
+  categoryStore.c2Id = ''
+  categoryStore.c3Id = ''
+  categoryStore.c3Arr = []
+}
+const reqC3 = () => {
+  categoryStore.getC3()
+  categoryStore.c3Id = ''
+
 }
 </script>
 

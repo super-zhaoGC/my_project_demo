@@ -14,6 +14,6 @@ export interface CategoryData {
   c1Arr: CategoryObj[]
   c2Id: number | string
   c2Arr: CategoryObj[]
-  // c3Id: number | string
+  c3Id: number | string
   c3Arr: CategoryObj[]
 }
