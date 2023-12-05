@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 import 'virtual:svg-icons-register'
 //引入全局组件
-import gloablComponent from './components/index'
+import gloablComponent from './index'
 
 import pinia from './store'
 

@@ -48,7 +48,7 @@ let useUserStore = defineStore('User', {
     async logOut() {
       const result = await reqLogout()
 
-      if (result.code == 200) {
+      if (result.code == 201) {
         this.token = ''
         this.username = ''
         this.avatar = ''

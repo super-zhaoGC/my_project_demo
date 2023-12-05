@@ -6,6 +6,8 @@ enum API {
   C3_URL = '/admin/product/getCategory3/',
   ATTR_URL = '/admin/product/attrInfoList/',
   ADDORUPDATE_URL = '/admin/product/saveAttrInfo',
+  //删除某一个已有的属性
+  DELETEATTR_URL = '/admin/product/deleteAttr/',
 }
 //一级分类
 export const reqC1 = () => request.get<any, CategoryResponseData>(API.C1_URL)
@@ -29,3 +31,6 @@ export const reqTableAttr = (
 export const reqAddOrUpdateAttr = (data: Attr) => {
   return request.post<any, any>(API.ADDORUPDATE_URL, data)
 }
+//删除属性接口
+export const reqRemoveAttr = (attrId: number) =>
+  request.delete(API.DELETEATTR_URL + attrId)

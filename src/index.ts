@@ -1,7 +1,7 @@
 //引入组件
-import SvgIcons from './SvgIcons/index.vue'
+import SvgIcons from '@/components/SvgIcons/index.vue'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import Category from './Category/index.vue'
+import Category from '@/components/Category/index.vue'
 
 //注册全局组件
 const allGlobalComponents: Record<string, any> = { SvgIcons, Category }
