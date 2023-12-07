@@ -10,14 +10,16 @@
       </el-scrollbar>
     </div>
     <div class="layout_right">
-      <div class="layout_top">
-        <Tabbar></Tabbar>
-      </div>
-      <div class="layout_main">
-        <div style="height:auto">
-          <Main></Main>
+      <el-card>
+        <div class="layout_top">
+          <Tabbar></Tabbar>
         </div>
-      </div>
+        <div class="layout_main">
+          <div style="height:auto">
+            <Main></Main>
+          </div>
+        </div>
+      </el-card>
     </div>
   </div>
 </template>
@@ -66,6 +68,7 @@ let routeList = useUserStore().meunRouters
   .layout_right {
     width: 100%;
     display: flex;
+    height: 100%;
     flex-direction: column;
 
     .layout_top {

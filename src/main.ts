@@ -19,6 +19,9 @@ import '@/styles/index.scss'
 import router from './router'
 //引入全局鉴权路由
 import '@/permission'
+//
+// 暗黑模式如果只想导入css变量
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 //获取应用实力对象
 const app = createApp(App)
