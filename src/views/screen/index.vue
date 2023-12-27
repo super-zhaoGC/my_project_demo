@@ -10,8 +10,15 @@
           <Sex class="sex"></Sex>
           <Age class="age"></Age>
         </div>
-        <div class="center"></div>
-        <div class="right"></div>
+        <div class="center">
+          <Map class="map"></Map>
+          <Line class="line"></Line>
+        </div>
+        <div class="right">
+          <Rank class="rank"></Rank>
+          <Year class="year"></Year>
+          <Count class="count"></Count>
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +30,13 @@ import Top from "./components/top/index.vue"
 import Tourist from "./components/tourist/index.vue"
 import Sex from "./components/sex/index.vue"
 import Age from "./components/age/index.vue"
+//引入中间组件
+import Map from "./components/map/map.vue"
+import Line from "./components/line/index.vue"
+//引入右侧组件
+import Rank from "./components/rank/index.vue"
+import Year from "./components/year/index.vue"
+import Count from "./components/count/index.vue"
 
 
 
@@ -89,12 +103,38 @@ window.onresize = () => {
 
       .center {
         flex: 2;
-        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+
+        .map {
+          flex: 4;
+
+        }
+
+        .line {
+          flex: 1;
+          box-sizing: border-box;
+
+        }
       }
 
       .right {
         flex: 1;
-        background-color: green;
+        display: flex;
+        flex-direction: column;
+
+        .rank {
+          flex: 1;
+        }
+
+        .year {
+          flex: 1;
+        }
+
+        .count {
+          flex: 1;
+        }
       }
     }
   }
