@@ -27,6 +27,9 @@ import useCategoryStore from "@/store/modules/category";
 import { onMounted } from "vue";
 let categoryStore = useCategoryStore()
 onMounted(() => {
+  categoryStore.c1Id = ''
+  categoryStore.c2Id = ''
+  categoryStore.c3Id = ''
   reqC1()
 })
 const reqC1 = () => {

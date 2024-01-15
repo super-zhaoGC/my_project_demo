@@ -10,16 +10,15 @@
       </el-scrollbar>
     </div>
     <div class="layout_right">
-      <el-card>
-        <div class="layout_top">
-          <Tabbar></Tabbar>
+
+      <div class="layout_top">
+        <Tabbar></Tabbar>
+      </div>
+      <div class="layout_main">
+        <div style="height:auto">
+          <Main></Main>
         </div>
-        <div class="layout_main">
-          <div style="height:auto">
-            <Main></Main>
-          </div>
-        </div>
-      </el-card>
+      </div>
     </div>
   </div>
 </template>
