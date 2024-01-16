@@ -5,7 +5,7 @@
       <div v-show="scene == 0">
         <el-button type="primary" size="default" @click="addSPU(categoryStore.c3Id)" icon="Plus"
           :disabled="categoryStore.c3Id ? false : true">添加SPU</el-button>
-        <el-table border style="margin: 10px 0;" :data="records">
+        <el-table border style="margin: 10px 0;" :data="records" max-height="400px">
           <el-table-column label="序号" type="index" align="center" width="100px"></el-table-column>
           <el-table-column label="SPU名称" prop="spuName"></el-table-column>
           <el-table-column label="SPU描述" prop="description" show-overflow-tooltip></el-table-column>

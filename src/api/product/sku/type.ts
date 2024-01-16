@@ -1,3 +1,5 @@
+import { skuData } from '../spu/type'
+
 export interface ResponseData {
   code: number
   message: string
@@ -44,4 +46,9 @@ export interface SkuResponseData extends ResponseData {
     searchCount: boolean
     pages: number
   }
+}
+
+//获取商品详情接口返回的数据ts类型
+export interface skuInfoData extends ResponseData {
+  data: SkuData
 }
