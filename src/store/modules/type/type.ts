@@ -7,6 +7,7 @@ export interface userState {
   meunRouters: RouteRecordRaw[]
   username: string
   avatar: string
+  buttons: string[]
 }
 
 export interface CategoryData {

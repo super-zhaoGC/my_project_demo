@@ -32,7 +32,8 @@ router.beforeEach(
         } else {
           try {
             await userStore.getUserInfo()
-            next()
+            //万一刷新的时候是异步路由，有可能获取到用户信息但是异步路由没有加载完毕，出现空白效果
+            next({ ...to })
           } catch (error) {
             //token过期|用户手动处理token
             //退出登陆->用户相关的数据清空

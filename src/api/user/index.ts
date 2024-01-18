@@ -13,6 +13,6 @@ const reqLogin = (data: any) => request.post<any, any>(API.LOGIN_URL, data)
 //获取用户信息接口方法
 const reqUserInfo = () => request.get<any, any>(API.USERINFO_URL)
 //退出登录
-const reqLogout = () => request.get<any, any>(API.LOGOUT_URL)
+const reqLogout = () => request.post<any, any>(API.LOGOUT_URL)
 
 export { reqLogin, reqUserInfo, reqLogout }

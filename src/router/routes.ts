@@ -1,5 +1,5 @@
-//定义路由组件
-const routes = [
+//定义静态路由组件
+const constanteRoutes = [
   {
     path: '/login',
     component: () => import('@/views/login/index.vue'),
@@ -43,16 +43,7 @@ const routes = [
       icon: 'DocumentDelete',
     },
   },
-  {
-    path: '/:pathMatch(.*)*',
-    redirect: '/404',
-    name: 'Any',
-    meta: {
-      title: '任意路由',
-      hidden: true,
-      icon: 'Failed',
-    },
-  },
+
   {
     path: '/screen',
     component: () => import('@/views/screen/index.vue'),
@@ -63,6 +54,9 @@ const routes = [
       icon: 'Platform',
     },
   },
+]
+//定义动态路由组件
+const asyncRoutes = [
   {
     path: '/acl',
     component: () => import('@/layout/layout.vue'),
@@ -155,4 +149,26 @@ const routes = [
     ],
   },
 ]
-export default routes
+//任意路由
+const anyRoute = {
+  //任意路由
+  path: '/:pathMatch(.*)*',
+  redirect: '/404',
+  name: 'Any',
+  meta: {
+    title: '任意路由',
+    hidden: true,
+    icon: 'DataLine',
+  },
+}
+// {
+//   path: '/:pathMatch(.*)*',
+//   redirect: '/404',
+//   name: 'Any',
+//   meta: {
+//     title: '任意路由',
+//     hidden: true,
+//   },
+// },
+
+export { constanteRoutes, asyncRoutes, anyRoute }
